@@ -3,8 +3,7 @@ dt_1 <- subset(dt_raw,dt_raw[,1] == "1/2/2007")
 dt_2 <- subset(dt_raw,dt_raw[,1] == "2/2/2007")
 dt <- rbind(dt_1,dt_2)
 
-# dt[,2] <- paste(dt[,1],dt[,2],sep=" ")
-
+par(mar=c(4,4,4,4))
 dt$TimeStamp <- strptime(dt[,2],format="%d/%m/%Y %H:%M:%S")
 
 dt[,3] <- as.numeric(as.character(dt[,3]))
